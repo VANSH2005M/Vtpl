@@ -246,6 +246,113 @@
             position: relative;
             overflow: hidden;
         }
+        /* TEAM CARD CLICK */
+
+        .team-card{
+            cursor:pointer;
+        }
+
+
+        /* PLAYER POPUP */
+
+        .player-popup{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+
+            display:none;
+            justify-content:center;
+            align-items:center;
+
+            background:rgba(0,0,0,0.75);
+
+            z-index:9999999999;
+        }
+
+
+        /* POPUP BOX */
+
+        .popup-box{
+            width:90%;
+            max-width:420px;
+
+            background:linear-gradient(135deg, #1e1e1e, #2c2c2c);
+
+            border-radius:22px;
+
+            padding:30px;
+
+            position:relative;
+
+            z-index:99999999999;
+
+            animation:popupAnim 0.3s ease;
+
+            box-shadow:0 10px 40px rgba(0,0,0,0.45);
+        }
+
+
+        /* POPUP TITLE */
+
+        .popup-box h2{
+            text-align:center;
+            margin-bottom:25px;
+            font-size:28px;
+            color:#b08a4a;;
+        }
+
+
+        /* PLAYER LIST */
+
+        .player-list{
+            max-height:400px;
+            overflow-y:auto;
+        }
+
+
+        /* PLAYER NAME */
+
+        .player-item{
+            background:#f3f3f3;
+            padding:14px;
+            margin-bottom:12px;
+            border-radius:12px;
+            text-align:center;
+            font-size:17px;
+            font-weight:600;
+            color:#111;
+        }
+
+
+        /* CLOSE BUTTON */
+
+        .close-popup{
+            position:absolute;
+            top:10px;
+            right:18px;
+            font-size:35px;
+            cursor:pointer;
+            color:#111;
+        }
+
+
+        /* ANIMATION */
+
+        @keyframes popupAnim{
+
+            from{
+                transform:scale(0.7);
+                opacity:0;
+            }
+
+            to{
+                transform:scale(1);
+                opacity:1;
+            }
+
+        }
 
         .seal-disc::before {
             content: '';
@@ -261,6 +368,24 @@
             inset: 17px;
             border-radius: 50%;
             border: 1px dashed rgba(130, 82, 16, .36);
+        }
+
+        .main-sponsor-text{
+            font-size: 25px;
+            font-weight: 600;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #b08a4a;
+            text-align: center;
+        }
+
+        .co-sponsor-text{
+            font-size: 25px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #b08a4a;
+            text-align: center;
         }
 
         .seal-shine {
@@ -2210,13 +2335,6 @@
                     <div class="det-lbl">Format</div>
                     <div class="det-val">T11 Cricket<br><small>League</small></div>
                 </div>
-                <div class="det-card full">
-                    <div class="det-icon">🎽</div>
-                    <div class="det-lbl">Who Can Play</div>
-                    <div class="det-val" style="font-size:13px">Terapanth Community Members<br><small>All are
-                            Welcome</small>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -2251,7 +2369,7 @@
             <div class="aadhya-banner-inner">
                 <div class="sec-hd" style="margin-bottom:24px">
                     <p class="sec-eye">Proudly Presents</p>
-                    <p class="sec-eye">Main Sponsor</p>
+                    <p class="main-sponsor-text">Main Sponsor</p>
                     <div class="gold-div"></div>
                 </div>
                 <img class="aadhya-banner-img"
@@ -2265,7 +2383,7 @@
             <div class="aadhya-banner-inner">
                 <div class="sec-hd" style="margin-bottom:24px">
                     <p class="sec-eye">Proudly Presents</p>
-                    <p class="sec-eye">Co Sponsor</p>
+                    <p class="co-sponsor-text">Co Sponsor</p>
                     <div class="gold-div"></div>
                 </div>
                 <img class="aadhya-banner-img"
@@ -2286,57 +2404,73 @@
                 <div class="gold-div"></div>
             </div>
             <div class="teams-grid fi">
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('MM Warriors')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="MM worrires.png"
                             alt="MM Warriors"></div>
                     <div class="team-name">MM Warriors</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('Sentoman Super Kings')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="sentoman.jpeg"
                             alt="Sentoman"></div>
                     <div class="team-name">Sentoman Super Kings</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('Sitayya Stars')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="Sitayya.jpeg"
                             alt="Sitayya Stars"></div>
                     <div class="team-name">Sitayya Stars</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('Dhurandhar 11')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="Dhurandhar.jpeg"
                             alt="Dhurandhar 11"></div>
                     <div class="team-name">Dhurandhar 11</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('JD Royals')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="JD royals.jpeg"
                             alt="JD Royals"></div>
                     <div class="team-name">JD Royals</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('Knight Riders')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="KJ night riders.jpeg"
                             alt="Knight Riders"></div>
                     <div class="team-name">Knight Riders</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('Kutchi Super Fighter')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="Kutchi Super Fighter.jpeg"
                             alt="Kutchi Super Fighter"></div>
                     <div class="team-name">Kutchi Super Fighter</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card" onclick="openTeam('Aadhya Int Aces')">
                     <div class="team-logo-wrap"><img class="team-logo-img"
                             src="Aadhya.jpeg"
                             alt="Aadhya Int Aces"></div>
                     <div class="team-name">Aadhya Int Aces</div>
+                    <br>
+                    <div class="det-lbl">View Squad</div>
                 </div>
             </div>
+           
         </section>
-
 
 
         <!-- CTA -->
@@ -2367,8 +2501,229 @@
             <p><span>VTPL 2026</span><br><span>· VAV Terapanth Premier League · </span> <br><span>One Team One Dream</span> </p>
         </div>
     </div>
+     <!-- PLAYER POPUP -->
+
+            <div class="player-popup" id="playerPopup">
+
+                <div class="popup-box">
+
+                    <span class="close-popup" onclick="closePopup()">×</span>
+
+                    <h2 id="popupTeamName">Players</h2>
+
+                    <div class="player-list" id="playerList"></div>
+
+                </div>
+
+            </div>
 
     <script>
+        
+        const teamPlayers = {
+
+            "JD Royals": [
+
+                "Krish Parikh (C)",
+                "Himanshu Sanghvi",
+                "Vansh Rajeshbhai Mehta",
+                "Veer Sanghavi",
+                "Malav Mehta",
+                "Kevin",
+                "Pratik H Parikh",
+                "Vishrut Parikh",
+                "Naitik",
+                "Mehta Rachit Abhinav",
+                "Darshan Mehta",
+                "Kiran Mehta"
+
+            ],
+
+            "Sentoman Super Kings": [
+
+                "Fenil Parikh (c)",
+                "Yash Doshi",
+                "Jainam Mehta",
+                "Aagam Sanghvi",
+                "Heet",
+                "Jay Mehta",
+                "Pratik Parikh",
+                "Mittal Parikh",
+                "Paras B Parikh",
+                "Nemil Pareshbhai Parikh",
+                "Vansh",
+                "Darshan Modi",
+                "Ronak Mehta"
+
+            ],
+
+            "Aadhya Int Aces": [
+
+                "Karna Parikh (c)",
+                "Harsh",
+                "Harshil Modi",
+                "Kavit Parikh",
+                "Dhaval Mehta",
+                "Nipun Mehta",
+                "Hardik Doshi",
+                "Tirth Modi",
+                "Milan Mehta",
+                "Ruchit Parikh",
+                "Paras C Mehta",
+                "Krishang Mehta",
+                "Rishi Parikh"
+
+            ],
+
+            "Dhurandhar 11": [
+
+                "Bhavya Modi (c)",
+                "Gantavya Mehta",
+                "Meet Parikh",
+                "Punit Doshi",
+                "Srujan Parikh",
+                "Jaymin Mehta",
+                "Meet Mehta",
+                "Dravya Mehta",
+                "Shubham Parikh",
+                "Vidhyut",
+                "Deep Parikh",
+                "Meet Mehta",
+                "Samkit"
+
+            ],
+
+            "Knight Riders": [
+
+            "Pratik V Parikh (c)",
+            "Hait Mehta",
+            "Divyam Shah",
+            "Udit Mehta",
+            "Kalp Modi",
+            "Jainam Mehta",
+            "Niket Modi",
+            "Jay Parikh",
+            "DV",
+            "Naitik Parikh",
+            "Nimesh Modi",
+            "Vansh VimalKumar Parikh"
+
+            ],
+
+            "MM Warriors": [
+
+                "Dipen Mehta (C)",
+                "MUDIT MEHTA",
+                "Aaditya Mehta",
+                "Bharat Mehta",
+                "Nishant Mehta",
+                "Veer Parikh",
+                "Kevin Mehta",
+                "Viral",
+                "VIKAS",
+                "Jaymin",
+                "VARUN PAREKH",
+                "Hemil Shah",
+                "Parshva Mehta"
+
+            ],
+
+            "Sitayya Stars": [
+
+                "Sanket Mehta (C)",
+                "Bhavya Parikh",
+                "Rahil J Parikh",
+                "Mohit",
+                "Darshan",
+                "Sandeep Mehta",
+                "vansh.s.parikh",
+                "Samkit Mehta",
+                "Sunny",
+                "Sagar Shah",
+                "Manan",
+                "UTSAV MEHTA",
+                "Vivaan Mehta"
+
+            ],
+
+            "Kutchi Super Fighter": [
+
+                "Paras Mehta (c)",
+                "Lakshya Parikh",
+                "Amit",
+                "JAINAM J PARIKH",
+                "Shaury Mehta",
+                "SAGAR MODI",
+                "Rushabh Mehta",
+                "Parikh Heet Bhikhabhai",
+                "Vatsal Mehta",
+                "Dharmist Mehta",
+                "Mehta Abhishek Dhirajlal",
+                "PARIKH ABHINAV",
+                "Abhinav Mehta"
+
+            ],
+
+};
+
+        function openTeam(teamName){
+
+            const popup = document.getElementById("playerPopup");
+
+            const playerList = document.getElementById("playerList");
+
+            const popupTeamName = document.getElementById("popupTeamName");
+
+
+
+            popup.style.display = "flex";
+
+
+
+            popupTeamName.innerText = teamName + " Players";
+
+
+
+            playerList.innerHTML = "";
+
+
+
+            teamPlayers[teamName].forEach(player => {
+
+                playerList.innerHTML += `
+
+                    <div class="player-item">
+
+                        ${player}
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+
+
+        function closePopup(){
+
+            document.getElementById("playerPopup").style.display = "none";
+
+        }
+
+
+
+        window.onclick = function(e){
+
+            const popup = document.getElementById("playerPopup");
+
+            if(e.target == popup){
+
+                popup.style.display = "none";
+
+            }
+
+        }
         var revealed = false;
         function revealCard(e) {
             if (revealed) return;
