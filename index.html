@@ -2673,19 +2673,11 @@
 
             const popupTeamName = document.getElementById("popupTeamName");
 
-
-
             popup.style.display = "flex";
-
-
 
             popupTeamName.innerText = teamName + " Players";
 
-
-
             playerList.innerHTML = "";
-
-
 
             teamPlayers[teamName].forEach(player => {
 
@@ -2696,22 +2688,16 @@
                         ${player}
 
                     </div>
-
                 `;
-
             });
 
         }
-
-
 
         function closePopup(){
 
             document.getElementById("playerPopup").style.display = "none";
 
         }
-
-
 
         window.onclick = function(e){
 
